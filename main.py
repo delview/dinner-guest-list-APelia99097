@@ -1,12 +1,21 @@
-# Create a program that will take user input about dinner guests they are inviting, 
-# add names to a list, and print out invitations for each dinner guest. At the beginning of the program, ask the user how many guests they want to 
-# invite and then create a loop that will keep appending names to the list until the maximum number is reached before printing out all the invitation messages.
 
-def great_user():
-    print("Hello User this is a dinner inviting list ")
-    name = input("Whats your name ")
+# Function that greats the user
+# remove function for testing
+print("Hello User this is a dinner inviting list ")
+name = input("Whats your name ").capitalize()
 
+# makes a empty guest list
 guest = []
+# asks the user how many people they would like to add to the list
 num_people = int(input("How many people would you like to invite (number only) "))
+# A Loop that runs until the num_people in the list are over
 for num in range(num_people):
-    guest.append(input("Person To add to the list: "))
+    # adds the name of the guest to the guest list
+   guest_name = input("Whats the name of the guest you want to add: ")
+   guest.append(guest_name)
+   print("Name Added!")
+
+
+for num in range(num_people):
+    print(f"Here is a message for {guest_name}: ")
+    print(f"Hello {guest_name} you have been invited to {name}s dinner party" )
