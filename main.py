@@ -32,5 +32,12 @@ while True:
             print(f"{destroy} has been removed from the list")
             print(guest)
         else:
-            ("Given person is already not in the list")
+           print("Given person is already not in the list")
+    elif kick == 'n':
+        create = input("would you like to add someone to the list? [y] or [n] ")
+        if create == 'y':
+            spawn = input("PLease enter the name of the person you would like to invite: ")
+            guest.append(spawn)
+            print(f"{spawn} has been added to the list")
+
 
