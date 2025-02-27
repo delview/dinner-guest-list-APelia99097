@@ -19,7 +19,7 @@ for num in range(num_people):
 
 
 # A loop that prints a message for each person
-for num in range(num_people):
+for guest_name in guest:
     print(f"Here is a message for {guest_name}: ")
     print(f"Hello {guest_name} you have been invited to {name}s dinner party" )
 
@@ -39,5 +39,17 @@ while True:
             spawn = input("PLease enter the name of the person you would like to invite: ")
             guest.append(spawn)
             print(f"{spawn} has been added to the list")
+        elif create == 'n':
+            pls_stop = input("is this your final list? [y] or [n] ")
+            if pls_stop == 'y':
+                print(f"Here is your final list, im sick of this {guest}")
+                print("BYEEEE! ")
+                exit()
+            elif pls_stop == 'n':
+                print("Im done.")
+                print(guest)
+                exit()
+        
+
 
 
