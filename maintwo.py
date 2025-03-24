@@ -27,6 +27,12 @@ def add_new_guest(guest):
     guest.append(new_guest)
     print(f"{new_guest} has been added to the list")
     
+def remove_guest(guest):
+    remove_guest = input("Whats the name of the person you would like to remove")
+    if remove_guest in guest:
+        guest.remove(remove_guest)
+    else:
+        print("Given name is already not in list ")
 
 # Main Program Flow
 def main():
