@@ -17,10 +17,16 @@ def get_num_people():
 
 # User can now add the guest names
 def add_guest(num_people, guest):
-    for _ in range(num_people):
+    for num in range(num_people):
         guest_name = input("What's the name of the guest you would like to invite? ")
         guest.append(guest_name)
         print("Name Added!")
+
+def add_new_guest(guest):
+    new_guest = input("Whats the name of the person you would like to add? ")
+    guest.append(new_guest)
+    print(f"{new_guest} has been added to the list")
+    
 
 # Main Program Flow
 def main():
