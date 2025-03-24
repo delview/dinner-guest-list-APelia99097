@@ -34,14 +34,21 @@ def remove_guest(guest):
     else:
         print("Given name is already not in list ")
 
-def do_something():
-    do_smt = input("WOuld you like to [A]dd, [R]emove, or [G]enerate the final list? ").capitalize()
-    if do_smt == "A":
-        add_new_guest()
-    elif do_smt == "R":
-        remove_guest()
-    elif do_smt == "G":
-        pass
+def do_something(guest):
+    while True:  # Keeps asking until the user chooses to generate the list
+        do_smt = input("Would you like to [A]dd, [R]emove, or [G]enerate the final list? ").capitalize()
+        if do_smt == "A":
+            add_new_guest(guest)
+        elif do_smt == "R":
+            remove_guest(guest)
+        elif do_smt == "G":
+            print(f"Final guest list: {', '.join(guest)}")  # Display the final list
+            break  # Exit the loop after generating the list
+        else:
+            print("Invalid option, please choose A, R, or G.")
+
+        
+            
 
 # Main Program Flow
 def main():
@@ -50,7 +57,7 @@ def main():
     guest = []  # Initialize the guest list
     add_guest(num_people, guest)
     print(f"Your final guest list: {', '.join(guest)}")
-
+    do_something(guest)
 
 # Run the main function
 if __name__ == "__main__":
