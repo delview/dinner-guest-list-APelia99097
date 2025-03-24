@@ -34,6 +34,15 @@ def remove_guest(guest):
     else:
         print("Given name is already not in list ")
 
+def do_something():
+    do_smt = input("WOuld you like to [A]dd, [R]emove, or [G]enerate the final list? ").capitalize()
+    if do_smt == "A":
+        add_new_guest()
+    elif do_smt == "R":
+        remove_guest()
+    elif do_smt == "G":
+        pass
+
 # Main Program Flow
 def main():
     great_user()
@@ -41,6 +50,7 @@ def main():
     guest = []  # Initialize the guest list
     add_guest(num_people, guest)
     print(f"Your final guest list: {', '.join(guest)}")
+
 
 # Run the main function
 if __name__ == "__main__":
