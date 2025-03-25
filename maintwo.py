@@ -34,15 +34,25 @@ def remove_guest(guest):
     else:
         print("Given name is already not in list ")
 
+def generate_list(guest):
+    if not guest:
+        print("No guests have been added yet.")
+    else:
+        print("Here are the invitation messages for your guests:")
+        for name in guest:
+            print(f"Dear {name}, you have been invited to my dinner party")
+
 def do_something(guest):
     while True:  # Keeps asking until the user chooses to generate the list
         do_smt = input("Would you like to [A]dd, [R]emove, or [G]enerate the final list? ").capitalize()
         if do_smt == "A":
             add_new_guest(guest)
+            print(f"Guest list: {', '.join(guest)}")
         elif do_smt == "R":
             remove_guest(guest)
+            print(f"Guest list: {', '.join(guest)}")
         elif do_smt == "G":
-            print(f"Final guest list: {', '.join(guest)}")  # Display the final list
+            generate_list(guest)
             break  # Exit the loop after generating the list
         else:
             print("Invalid option, please choose A, R, or G.")
